@@ -1,1 +1,12 @@
-about file
+# ~/bin/acemenu/help/about.txt
+
+## Updating acemenu
+
+You can update acemenu by moving into 
+~/bin/acemenu directory and executing
+a `git pull` command as follows:
+
+
+cd ~/bin/acemenu
+git pull
+
