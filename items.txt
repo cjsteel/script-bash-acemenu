@@ -2,3 +2,4 @@ about
 display
 minc
 updating
+diskspace
