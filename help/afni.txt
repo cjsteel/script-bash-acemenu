@@ -1,0 +1,7 @@
+To unpack the AFNI binaries into your 
+home directory, run the following command:
+
+tcsh @update.afni.binaries -package linux_ubuntu_16_64.tgz -do_extras
+
+Note: Keep the '@update.afni.binaries' script 
+in your home directory to run future updates!
