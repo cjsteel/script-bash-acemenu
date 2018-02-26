@@ -1,9 +1,0 @@
-about
-display
-minc
-afni
-matlab
-updating
-diskspace
-
-

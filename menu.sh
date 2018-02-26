@@ -1,52 +1,29 @@
-#!/bin/bash
 
-# adapted from
-#
-#    http://tldp.org/LDP/abs/html/testbranch.html#CASECMD
-#    Example 11-30. Creating menus using select
-#
-# license
-#
-#    GNU Free Documentation License
-#
-# Requirements:
-#
-#    items.txt
-#
-#    A text file called menuitems.txt should be place in the same directory as this file.
-#    Place a single menu description on each line.
-#
-#    For example:
-#
-#      about
-#      contributing
-#      some_other_item
-#
-#    PATH
-#
-#    The PATH env should include ~/bin. For Ubuntu that would be in ~/.bashrc, for
-#    others perhaps ~/.profile
-#
-# Usage:
-#
-#    Start a terminal session and enter:
-#
-#        menu
-clear
-PS3='Select the number and then press return: ' # Sets the prompt string.
-                                       # Otherwise it defaults to #? .
+#!/bin/bash
+ls -1 "$HOME/bin/acemenu/help/" > "$HOME/bin/acemenu/directories.txt"
+echo "# ACE Resources" > "$HOME/bin/acemenu/README.md"
+echo " " >> "$HOME/bin/acemenu/README.md"
+echo "## Local Resources" >> "$HOME/bin/acemenu/README.md"
+echo " " >> "$HOME/bin/acemenu/README.md"
 MENUITEMS=""
 while IFS=$'
 ' read -r line || [[ -n "$line" ]]; do
-   MENUITEMS="$MENUITEMS $line"
-done < "$HOME/bin/acemenu/items.txt"
-echo
-
-select menuitem in $MENUITEMS
-do
-  clear
-  cat "$HOME/bin/acemenu/help/${menuitem}.txt"
-  break  # What happens if there is no 'break' here?
-done
+#   MENUITEMS="$MENUITEM * [$line]($line/$line.md)\n"
+   echo "* [$line](help/$line/index.html)" >> "$HOME/bin/acemenu/README.md"
+#   echo $MENUITEMS
+done < "$HOME/bin/acemenu/directories.txt"
+echo " " >> "$HOME/bin/acemenu/README.md"
+echo "## Additional Resources" >> "$HOME/bin/acemenu/README.md"
+echo " " >> "$HOME/bin/acemenu/README.md"
+echo "* [ACElab.ca](https://acelab.ca/)" >> "$HOME/bin/acemenu/README.md"
+echo " " >> "$HOME/bin/acemenu/README.md"
+cd $HOME/bin/acemenu
+firefox --new-window $HOME/bin/acemenu/index.html &&
 exit
-
+#select menuitem in $MENUITEMS
+#do
+#  clear
+#  cat "$HOME/bin/acemenu/{helpitems}.md"
+#  break  # What happens if there is no 'break' here?
+#done
+#exit
