@@ -1,5 +1,6 @@
 # file: ROADMAP.md
 
-## Additions
+## Integrate in to acemenu
 
-* change default so repos are not updated.
+* tag as release 0.0.2 - OK
+* Peer testing
