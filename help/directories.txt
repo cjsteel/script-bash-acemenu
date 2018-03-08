@@ -1,0 +1,10 @@
+about
+afni
+datasets
+diskspace
+display
+matlab
+menu
+minc
+myrepos
+update1

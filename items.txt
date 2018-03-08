@@ -1,0 +1,9 @@
+about
+display
+minc
+afni
+matlab
+update
+diskspace
+
+
