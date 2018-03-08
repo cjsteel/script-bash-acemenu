@@ -39,7 +39,8 @@ MENUITEMS=""
 while IFS=$'
 ' read -r line || [[ -n "$line" ]]; do
    MENUITEMS="$MENUITEMS $line"
-done < "$HOME/bin/acemenu/items.txt"
+done < "$HOME/bin/acemenu/help/directories.txt"
+#done < "$HOME/bin/acemenu/items.txt"
 echo
 
 select menuitem in $MENUITEMS

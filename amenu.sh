@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #ls -1 "$HOME/bin/acemenu/help/" > "$HOME/bin/acemenu/directories.txt"
 listdirs(){ set -- */; printf "%s\n" "${@%/}"; }
@@ -14,7 +13,7 @@ while IFS=$'
 #   MENUITEMS="$MENUITEM * [$line]($line/$line.md)\n"
    echo "* [$line]($line/index.html)" >> "$HOME/bin/acemenu/help/README.md"
 #   echo $MENUITEMS
-done < "$HOME/bin/acemenu/directories.txt"
+done < "$HOME/bin/acemenu/help/directories.txt"
 echo " " >> "$HOME/bin/acemenu/help/README.md"
 echo "## Additional Resources" >> "$HOME/bin/acemenu/help/README.md"
 echo " " >> "$HOME/bin/acemenu/help/README.md"
