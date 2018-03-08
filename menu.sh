@@ -46,7 +46,8 @@ echo
 select menuitem in $MENUITEMS
 do
   clear
-  cat "$HOME/bin/acemenu/help/${menuitem}/README.md"
+  pandoc -f markdown -t plain --wrap=none $HOME/bin/acemenu/help/${menuitem}/README.md -o $HOME/bin/acemenu/help/${menuitem}/README.txt
+  cat "$HOME/bin/acemenu/help/${menuitem}/README.txt"
   break  # What happens if there is no 'break' here?
 done
 exit
