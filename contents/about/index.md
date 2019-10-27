@@ -1,15 +1,13 @@
 # about.md
 
-* [Main Menu](../index.md)
+short help notes and links to additional resources
 
-## Description
+* [main menu](../index.md)
 
-A collection of scripts used to create and/or display
-a menu items.
+## Lab Resources
 
-
+* [acelab.ca](https://acelab.cbrain.mcgill.ca/)
 
 ## External Resources
 
-* [acelab.ca](https://acelab.cbrain.mcgill.ca/)
 

@@ -1,9 +1,13 @@
 
 #!/bin/bash
+#
+# Get the path to our script no matter where it is executed
+SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+echo ${SCRIPT_PATH}
 
 # Parent directory variables
 #
-SCRIPT_RESOURCES_DIRECTORY=".resources"
+SCRIPT_RESOURCES_DIRECTORY="${SCRIPT_PATH}/.resources"
 PATH_TO_DIRECTORY_NAMES_LIST=${SCRIPT_RESOURCES_DIRECTORY=}/directories.txt
 MARKDOWN_INDEX="index.md"
 
@@ -18,6 +22,8 @@ find . -maxdepth 1 -type d ! -name '.*' -printf '%f\n' > ${PATH_TO_DIRECTORY_NAM
 # Customizable header
 #
 echo "# Acelabs Resource Index" > ${MARKDOWN_INDEX}
+echo " " >> ${MARKDOWN_INDEX}
+echo "acelab quick reference menu " >> ${MARKDOWN_INDEX}
 echo " " >> ${MARKDOWN_INDEX}
 
 # Generate parent menu items in parent index.md
