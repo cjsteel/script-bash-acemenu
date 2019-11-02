@@ -1,13 +1,10 @@
-# about.md
+# item2.md
 
 * [Main Menu](../index.md)
 
 ## Description
 
-A collection of scripts used to create and/or display
-a menu items.
-
-
+This is an example of a menu item description file
 
 ## External Resources
 
