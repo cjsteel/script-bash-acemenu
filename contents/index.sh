@@ -1,13 +1,21 @@
 
 #!/bin/bash
 #
-# Get the path to our script no matter where it is executed
-SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
-echo ${SCRIPT_PATH}
+# Get the path to our symlink or script no matter where it is located
+# SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+
+# hardcoded script path (and menu location)
+#
+SCRIPT_DIR=~/bin/acemenu/contents
+#echo ${SCRIPT_DIR}
+#read -p "Press [Enter] to continue"
 
 # Parent directory variables
 #
-SCRIPT_RESOURCES_DIRECTORY="${SCRIPT_PATH}/.resources"
+SCRIPT_RESOURCES_DIRECTORY="${SCRIPT_DIR}/.resources"
+#echo ${SCRIPT_RESOURCES_DIRECTORY}
+#read -p "Press [Enter] to continue"
+
 PATH_TO_DIRECTORY_NAMES_LIST=${SCRIPT_RESOURCES_DIRECTORY=}/directories.txt
 MARKDOWN_INDEX="index.md"
 
@@ -17,8 +25,9 @@ mkdir -p ${SCRIPT_RESOURCES_DIRECTORY}
 
 ## generate a list of directory names in a text file not including hidden directories
 #
+cd ${SCRIPT_DIR}
 find . -maxdepth 1 -type d ! -name '.*' -printf '%f\n' > ${PATH_TO_DIRECTORY_NAMES_LIST}
-
+read -p "Press [Enter] to continue"
 # Customizable header
 #
 echo "# Acelabs Resource Index" > ${MARKDOWN_INDEX}
@@ -57,5 +66,6 @@ pandoc --template ${SCRIPT_RESOURCES_DIRECTORY}/default.html5 index.md --from ma
 sed -i '7 a\ \ <link rel="stylesheet" href=".resources/css/styles.css">' index.html
 # replace .md with .html
 sed -i 's/.md/.html/g' index.html
+firefox index.html
  # open index.html in the users preferred browser
-xdg-open index.html
+#xdg-open index.html
