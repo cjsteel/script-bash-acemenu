@@ -27,7 +27,8 @@ mkdir -p ${SCRIPT_RESOURCES_DIRECTORY}
 #
 cd ${SCRIPT_DIR}
 find . -maxdepth 1 -type d ! -name '.*' -printf '%f\n' > ${PATH_TO_DIRECTORY_NAMES_LIST}
-read -p "Press [Enter] to continue"
+#read -p "Press [Enter] to continue"
+
 # Customizable header
 #
 echo "# Acelabs Resource Index" > ${MARKDOWN_INDEX}
